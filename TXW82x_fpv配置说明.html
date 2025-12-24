@@ -1,0 +1,519 @@
+<!DOCTYPE html><html><head>
+      <title>82X_fpv配置说明</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\63474\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+.mpe-html-export #sidebar {
+  /* 强制显示 */
+  display: block !important;
+  left: 0 !important;
+  width: 300px !important;
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+/* 调整主体内容以腾出侧栏空间 */
+.mpe-html-export #page-wrapper {
+  /* 主体内容向右偏移，与侧栏宽度匹配 */
+  margin-left: 300px !important;
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="1-方案配置">1. 方案配置 </h1>
+<h2 id="11-摄像头配置">1.1. 摄像头配置 </h2>
+<h3 id="111-720p">1.1.1. 720P </h3>
+<ol>
+<li>将  <font color="red">720P_project_config.h</font>的内容替换到project_config.h对应的custom_id,该配置是能正常运行功能的配置,有其他功能需要调节空间分配,默认SDK将custom_id=3就是720P摄像头配置</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>/*****************************************************************************
+ * 720P摄像头(帧率主要看摄像头配置表,SDK默认1084 25帧)
+ * 主码流(H264):1280x720 @ 25fps
+ * 辅码流(H264):640x360  @ 25fps
+ * 录卡(MP4):主码流+aac音频(8KHz/16bit)
+ * 拍照(MJPG):1280x720
+ * 图传:RTSP  辅码流  默认地址:rtsp://ip:554/h264?1
+ * 回放:录风者采用下载模式去解码mp4回放
+ * 文件系统:FAT32、EXFAT(配合ffconf.h设置)
+ ****************************************************************************/
+</code></pre><ol start="2">
+<li>可以通过电脑连接wifi,通过ffplay去图传,测试地址分别为:</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>ffplay rtsp://ip/webcam   mjpeg图传 1280x720
+ffplay -rtsp_transport tcp rtsp://ip/h264?0  图传主码流  1280x720
+ffplay -rtsp_transport tcp rtsp://ip/h264?1  图传辅码流  640x360
+</code></pre><h3 id="112-1080p">1.1.2. 1080P </h3>
+<ol>
+<li>将  <font color="red">1080P_project_config.h</font>的内容替换到project_config.h对应的custom_id,该配置是能正常运行功能的配置,有其他功能需要调节空间分配,默认SDK将custom_id=4就是1080P摄像头配置</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>/*****************************************************************************
+ * 1080P摄像头(帧率主要看摄像头配置表,SDK默认2053 25帧)
+ * 主码流(H264):1920x1080 @ 25fps
+ * 辅码流(MJPG):1280x720  @ 25fps
+ * 录卡(MP4):主码流+aac音频(8KHz/16bit)
+ * 拍照(MJPG):1280x720
+ * 图传:RTSP  辅码流  默认地址:rtsp://ip:554/webcam
+ * 回放:录风者采用下载模式去解码mp4回放
+ * 文件系统:FAT32、EXFAT(配合ffconf.h设置)
+ ****************************************************************************/
+</code></pre><ol start="2">
+<li>可以通过电脑连接wifi,通过ffplay去图传,测试地址分别为:</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>ffplay rtsp://ip/webcam                         mjpeg图传 1280x720
+ffplay -rtsp_transport tcp rtsp://ip/h264?0     图传主码流 1920x1080
+</code></pre><h3 id="113-720p插值1080p">1.1.3. 720P插值1080P </h3>
+<ol>
+<li>将  <font color="red">720_to_1080_project_config.h</font>的内容替换到project_config.h对应的custom_id,该配置是能正常运行功能的配置,有其他功能需要调节空间分配,默认SDK将custom_id=5就是720P摄像头插值到1080P配置</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>/*****************************************************************************
+ * 720P摄像头,插值到1080P(帧率主要看摄像头配置表,SDK默认1084 25帧)
+ * 主码流(H264):1920x1080 @ 25fps
+ * 辅码流(H264):640x360   @ 25fps 
+ * 录卡(MP4):主码流+aac音频(8KHz/16bit)
+ * 拍照(MJPG):1280x720
+ * 图传:RTSP  辅码流  默认地址:rtsp://ip:554/h264?1
+ * 回放:录风者采用下载模式去解码mp4回放
+ * 文件系统:FAT32、EXFAT(配合ffconf.h设置)
+ ****************************************************************************/
+</code></pre><ol start="2">
+<li>可以通过电脑连接wifi,通过ffplay去图传,测试地址分别为:</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>ffplay rtsp://ip/webcam   mjpeg图传 1280x720
+ffplay -rtsp_transport tcp rtsp://ip/h264?0  图传主码流 1920x1080
+ffplay -rtsp_transport tcp rtsp://ip/h264?1  图传辅码流 640x360
+</code></pre><h3 id="114-uvc摄像头">1.1.4. UVC摄像头 </h3>
+<ol>
+<li>将  <font color="red">usb_project_config.h</font>的内容替换到project_config.h对应的custom_id,该配置是能正常运行功能的配置,有其他功能需要调节空间分配,默认SDK将custom_id=6,分辨率需要看uvc枚举以及代码是否正确启动对应分辨率镜头数据</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>/***************************************************************************************************************************************
+ * UVC摄像头
+ * UVC镜头: 与usb支持分辨率有关
+ * 水印码流:与uvc镜头分辨率一致
+ * 图传:RTSP  辅码流  默认地址:rtsp://ip:554/custom?route-usb(uvc镜头直接图传) 或者 rtsp://ip:554/custom?gen420_JPG_RECODE(uvc增加水印图传)
+ * 文件系统:FAT32、EXFAT(配合ffconf.h设置)
+ ***************************************************************************************************************************************/
+</code></pre><ol start="2">
+<li>可以通过电脑连接wifi,通过ffplay去图传,测试地址分别为:</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>ffplay rtsp://ip/custom?route-usb           UVC镜头直接图传
+ffplay rtsp://ip/custom?gen420_JPG_RECODE   UVC镜头重编码图传
+</code></pre><h2 id="12-font-colorredproject_confighfont配置宏说明">1.2. <font color="red">project_config.h</font>配置宏说明 </h2>
+<table>
+<thead>
+<tr>
+<th>宏</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><font color="red">系统以及内存相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>PIN_FROM_PARAM</td>
+<td>通过<font color="red">script.cfg</font>脚本和<font color="red">config.cfg</font>去生成对应的io配置信息,请查看重要的文件:<font color="red">pin_param.h</font>,<font color="red">script.cfg</font>,<font color="red">config.cfg</font>三个文件</td>
+</tr>
+<tr>
+<td>SYS_APP_FPV</td>
+<td>打开FPV的demo</td>
+</tr>
+<tr>
+<td>DEFAULT_SYS_CLK</td>
+<td>设置系统时钟的频率,经典值:192*1000000或者240*1000000</td>
+</tr>
+<tr>
+<td>PSRAM_HEAP</td>
+<td>开启psram heap功能,默认应该需要打开</td>
+</tr>
+<tr>
+<td>AV_PSRAM_HEAP</td>
+<td>打开sdk中视频专用psram内存池,sdk可以自己的内存池,sdk默认使用一个,如果需要减少内存碎片,不同模块可以独立分开内存池</td>
+</tr>
+<tr>
+<td>AV_HEAP</td>
+<td>同理AV_PSRAM_HEAP,这个是sram空间,主要分配给某些硬件模块的sram,由于video硬件模块需要的sram比较大,所以不与系统共用,减少申请连续空间失败的概率</td>
+</tr>
+<tr>
+<td>CONFIG_PSRAM_AVHEAP_SIZE</td>
+<td>配置AV_PSRAM_HEAP的内存池大小,需要根据产品功能去修改空间,默认sdk给的空间比较大,如果有其他功能,需要自行调整</td>
+</tr>
+<tr>
+<td>CONFIG_AVHEAP_SIZE</td>
+<td>同理CONFIG_PSRAM_AVHEAP_SIZE</td>
+</tr>
+<tr>
+<td>MORE_SRAM</td>
+<td>这个是主要是为了省sram才需要打开,但是效率降低,默认1080P镜头需要打开,1080P镜头需要sram比较大</td>
+</tr>
+<tr>
+<td><font color="red">视频软件配置相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>VPP_BUF1_EN</td>
+<td>打开VPP_BUF1功能,一般是需要特定辅码流或者产生不同分辨率的mjpeg才需要打开,某些产品形态需要结合PSRAM_FRAME_SAVE一起配合</td>
+</tr>
+<tr>
+<td>PSRAM_FRAME_SAVE</td>
+<td>需要VPP_BUF1打开才有效,是将vpp_buf1数据保存到psram,当前sdk一般用于H264辅码流</td>
+</tr>
+<tr>
+<td>SUB_STREAM_WIDTH</td>
+<td>设置辅码流的分辨率,注意:需要w和h是同比例不能有小数,如果需要图传,需要保证是8的倍数,这个与硬件挂钩,比例分别有:1/2,1/3,1/4,1/6,2/3,1/1</td>
+</tr>
+<tr>
+<td>RECORDER_MODE</td>
+<td>是录风者图传显示的路径地址显示,0:显示h264  1:显示mjpeg,如果更多需求,需要参考recorder_viidure.c中video_media的结构体</td>
+</tr>
+<tr>
+<td>DECODE_MAX_W</td>
+<td>最大解码后的w,由于解码为了效率,会预分配psram来作为解码空间,如果这个值设置太大,就会浪费空间,太小,导致解码大图失败,只是与解码后size有关,与图片size无关</td>
+</tr>
+<tr>
+<td>DECODE_MAX_H</td>
+<td>最大解码后的h,由于解码为了效率,会预分配psram来作为解码空间,如果这个值设置太大,就会浪费空间,太小,导致解码大图失败,只是与解码后size有关,与图片size无关</td>
+</tr>
+<tr>
+<td>MAX_DECODE_YUV_TX</td>
+<td>最大解码节点数量,如果不带屏,正常设置为1即可,实际根据产品对解码功能要求调整,空间计算公式:<font color="red">DECODE_MAX_W</font>*<font color="red">DECODE_MAX_H</font>*3/2*<font color="red">MAX_DECODE_YUV_TX</font></td>
+</tr>
+<tr>
+<td>TAKEPHOTO_EN</td>
+<td>拍照模式打开,sdk默认与录风者功能挂钩</td>
+</tr>
+<tr>
+<td>MAX_SINGLE_MP4_SIZE</td>
+<td>录制mp4文件的size(固定),如果设置为0,就是录制文件根据内容size来调整,固定size是为了文件系统的写入效率</td>
+</tr>
+<tr>
+<td>FORCE_SCALE_TO_H264</td>
+<td>强行将摄像头通过scale去编码h264,请配合<font color="red">VPP_SCALE_EN</font>、<font color="red">VPP_SCALE_WIDTH</font><font color="red">、VPP_SCALE_HIGH</font>宏配置</td>
+</tr>
+<tr>
+<td>VPP_SCALE_EN</td>
+<td>vpp_buf到scale1的使能,插值拉伸需要用到</td>
+</tr>
+<tr>
+<td>VPP_SCALE_WIDTH</td>
+<td>vpp_scale拉伸到目标的宽度,经典值:1280-&gt;1920,部分镜头需要调节镜头帧间隔,否则可能速度不够</td>
+</tr>
+<tr>
+<td>VPP_SCALE_HIGH</td>
+<td>vpp_scale拉伸到目标的高度,经典值:720-&gt;1080,部分镜头需要调节镜头帧间隔,否则可能速度不够</td>
+</tr>
+<tr>
+<td>JPG_NODE_COUNT</td>
+<td>默认mjpeg的节点数量,要根据mjpeg启动的分辨率去考虑,默认节点大小:16*1024<br>720P:算mjpeg大小50-80K,给10个节点足够<br>1080P:算mjpeg大小100-150K,给20个节点足够<br>其他分辨率,根据实际情况去配置<br>这里配置是常用分辨率的节点就好了,其他分辨率实际可用通过函数接口修改</td>
+</tr>
+<tr>
+<td><font color="red">视频硬件相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>MIPI_CSI_EN</td>
+<td>打开mipi的使能,如果镜头是mipi,需要打开</td>
+</tr>
+<tr>
+<td>VPP_EN</td>
+<td>一般video编码都需要打开,硬件通路需求</td>
+</tr>
+<tr>
+<td>H264_EN</td>
+<td>需要编码h264需要打开</td>
+</tr>
+<tr>
+<td>ISP_EN</td>
+<td>需要isp处理的时候要打开,默认video产品都打开</td>
+</tr>
+<tr>
+<td>JPG_EN</td>
+<td>需要编码MJPG需要打开</td>
+</tr>
+<tr>
+<td>SCALE_EN</td>
+<td>推屏或者解码都需要打开,或者需要对图像缩放需要打开</td>
+</tr>
+<tr>
+<td><font color="red">摄像头配置相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>DEV_SENSOR_GC1084</td>
+<td>摄像头1084的配置表,根据自己摄像头列表,需要自行将对应型号打开</td>
+</tr>
+<tr>
+<td><font color="red">sd卡以及文件系统</font></td>
+<td></td>
+</tr>
+<tr>
+<td>SDH_EN</td>
+<td>需要挂载sd的时候打开</td>
+</tr>
+<tr>
+<td>FS_EN</td>
+<td>需要挂载FTA32文件系统的时候需要打开</td>
+</tr>
+<tr>
+<td>USE_FAT_CACHE</td>
+<td>文件系统优化,默认是需要16K的psram作为文件系统加速</td>
+</tr>
+<tr>
+<td><font color="red">音频模块相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>AUDIO_EN</td>
+<td>sdk需要用到音频需要打开</td>
+</tr>
+<tr>
+<td><font color="red">USB配置相关</font></td>
+<td></td>
+</tr>
+<tr>
+<td>USB_EN</td>
+<td>usb使能,使用usb模块需要打开</td>
+</tr>
+<tr>
+<td>USB_HOST_EN</td>
+<td>使用usbhost功能需要打开</td>
+</tr>
+<tr>
+<td>RTT_USB_EN</td>
+<td>RTT框架usb打开</td>
+</tr>
+<tr>
+<td>RT_USBH</td>
+<td>RTT框架的usbhost打开</td>
+</tr>
+<tr>
+<td>RT_USBH_UVC</td>
+<td>打开RTT框架的UVC</td>
+</tr>
+<tr>
+<td>USB_JPG_ADD_WATERMARK</td>
+<td>将USB的mjpeg图片增加水印重新编码</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-io配置说明">1.3. io配置说明 </h2>
+<h3 id="131-io配置文件">1.3.1. io配置文件 </h3>
+<p><font color="red">注意:</font>io配置需要<font color="red">project_config.h</font>打开宏<font color="red">PIN_FROM_PARAM</font>,project/cfg适配了部分板子的io配置,客户主要使用<font color="red">学习板_NO25_439.cfg</font>的配置表,适配开发版</p>
+<h4 id="1311-font-colorredscriptcfgfont">1.3.1.1. <font color="red">script.cfg</font> </h4>
+<ol>
+<li>参考script.cfg文件说明,用户一般主要修改config_file_name即可,不同硬件板子自己更换对应的io cfg文件, <font color="red">config_file_name</font>注意用英文的文件名</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>//输入的源文件名
+app_file = APP.bin
+//生成输出的文件名
+output_file = app.bin
+//参数配置的文件
+config_file_name = config.cfg
+//以下配置一般不修改
+//对应宏的文件(如果是兼容,则不需要改)
+param_file_name = pin_param.h
+code_start = 0xc00
+code_offset = 0x230
+</code></pre><h4 id="1312-font-colorredconfigcfgfont">1.3.1.2. <font color="red">config.cfg</font> </h4>
+<ol start="2">
+<li>默认sdk是config.cfg的io配置,与配套学习板子使用,以下是相关例子,如果额外增加io配置,需要在sdk中<font color="red">pin_param.h</font>中添加对应的宏,根据自己i硬件板子,匹配不同的io</li>
+</ol>
+<pre data-role="codeBlock" data-info="md" class="language-gfm md"><code>//这个配置是学习板,板号:NO.25-439
+//这个配置是双摄像头的配置,配置了lcd
+
+//串口的io
+PIN_UART0_TX 	= 	PA_11
+PIN_UART0_RX 	= 	PA_12
+
+//sd卡的io
+PIN_SDH_CLK 	= 	PA_13
+PIN_SDH_CMD 	= 	PA_6
+PIN_SDH_DAT0 	= 	PA_7
+//SDH CLK 驱动能力 GPIO_DS_G2
+PIN_SDH_CLK_DRI_STRENGTH = PA_2
+
+
+//摄像头的io
+PIN_CSI0_PDN 		= 	PC_9
+
+//DVP
+PIN_DVP_HSYNC       =   PB_7
+PIN_DVP_VSYNC       =   PB_6
+PIN_DVP_PCLK        =   PB_12
+PIN_DVP_MCLK        =   PB_9
+PIN_DVP_DATA0       =   PB_14
+PIN_DVP_DATA1       =   PC_0
+PIN_DVP_DATA2       =   PC_1
+PIN_DVP_DATA3       =   PB_15
+PIN_DVP_DATA4       =   PB_13
+PIN_DVP_DATA5       =   PB_11
+PIN_DVP_DATA6       =   PB_10
+PIN_DVP_DATA7       =   PB_8
+
+//摄像头mclk的io
+PIN_PWM_CHANNEL_0	= 	PE_0
+
+
+	
+//mipi的io
+PIN_MIPI_CSI0_CLKN 	=	PA_2
+PIN_MIPI_CSI0_CLKP	=	PA_3
+PIN_MIPI_CSI0_D0N	=	PA_5
+PIN_MIPI_CSI0_D0P	=	PA_4
+PIN_MIPI_CSI0_D1N_CSI1_D0N =	PD_0
+PIN_MIPI_CSI0_D1P_CSI1_D0P =	PD_1
+PIN_MIPI_CSI1_CLKN 	=	PA_1
+PIN_MIPI_CSI1_CLKP	= 	PA_0
+
+
+//mipi0摄像头的iic
+PIN_MIPI0_IIC_CLK = PC_15
+PIN_MIPI0_IIC_SDA = PD_14
+
+PIN_MIPI1_IIC_CLK = PD_15
+PIN_MIPI1_IIC_SDA = PD_14
+
+//DVP摄像头IIC
+PIN_DVP0_IIC_SDA    = PD_14
+PIN_DVP0_IIC_CLK    = PC_15
+
+//LCD的配置
+PIN_MIPI_DSI_CLKN	= PD_7
+PIN_MIPI_DSI_CLKP	= PD_6
+PIN_MIPI_DSI_D0N	= PD_5
+PIN_MIPI_DSI_D0P	= PD_4
+PIN_MIPI_DSI_D1N	= PD_3
+PIN_MIPI_DSI_D1P	= PD_2
+
+PIN_ADKEY1 = PA_15
+PIN_TP_I2C_SCL      = PC_11
+PIN_TP_I2C_SDA      = PC_12
+PIN_TP_INT          = PC_10
+</code></pre><h2 id="14-fpv的at命令">1.4. FPV的AT命令 </h2>
+<p>AT命令可以自己独立增加,除了通用的at命令(<font color="red">atcmd.c</font>),fpv也增加了独立内存池的命令<br>
+1、AT+FPV_HEAP=av_psram,0,代表打印av_psram剩余的内存<br>
+2、AT+FPV_HEAP=av_psram,1,打印内存使用的情况(如果开启了内存检测,可以追踪内存使用的地址)<br>
+3、AT+FPV_DBG=av_psram,0,关闭定时打印内存的状态(fpv_loop中打印)</p>
+<p>代码模拟AT命令用法,如果没有串口或者通过其他方式模拟其他串口输入AT命令的方法:</p>
+<pre data-role="codeBlock" data-info="C" class="language-c C"><code><span class="token function">atcmd_recv</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token class-name">uint8_t</span><span class="token operator">*</span><span class="token punctuation">)</span><span class="token string">"AT+FPV_DBG=av_psram,0"</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#1-方案配置" class="md-toc-link"><ol>
+<li>方案配置</li>
+</ol>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#11-摄像头配置" class="md-toc-link"><p>1.1. 摄像头配置</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#111-720p" class="md-toc-link">
+            <p>1.1.1. 720P</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#112-1080p" class="md-toc-link">
+            <p>1.1.2. 1080P</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#113-720p插值1080p" class="md-toc-link">
+            <p>1.1.3. 720P插值1080P</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#114-uvc摄像头" class="md-toc-link">
+            <p>1.1.4. UVC摄像头</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#12-font-colorredproject_confighfont配置宏说明" class="md-toc-link">
+            <p>1.2. <font color="red">project_config.h</font>配置宏说明</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#13-io配置说明" class="md-toc-link"><p>1.3. io配置说明</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#131-io配置文件" class="md-toc-link"><p>1.3.1. io配置文件</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#1311-font-colorredscriptcfgfont" class="md-toc-link">
+            <p>1.3.1.1. <font color="red">script.cfg</font></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#1312-font-colorredconfigcfgfont" class="md-toc-link">
+            <p>1.3.1.2. <font color="red">config.cfg</font></p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#14-fpv的at命令" class="md-toc-link">
+            <p>1.4. FPV的AT命令</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
